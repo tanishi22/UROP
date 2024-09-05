@@ -158,16 +158,8 @@ total_patients_cp = cptac_data['ID'].nunique()
 proportion_9p_del_cp = len(patients_9p_del_cp)/(total_patients_cp) #60.2% of GBM patients are 9p21.3 deleted
 proportion_CDKN2A_del_cp = len(patients_CDKN2A_del_cp)/(total_patients_cp) #52% of GBM patients have a CDKN2A/B codel
 overlap_patients_cp = np.intersect1d(patients_CDKN2A_del_cp, patients_9p_del_cp)
-proportion_CDKN2A_with_9p_cp = len(overlap_patients_cp) / len(patients_CDKN2A_del_cp)
-proportion_9p_with_CDKN2A_cp = len(overlap_patients_cp) / len(patients_9p_del_cp)
-
-# Results
-print(f"Total number of patients: {len(cptac_data['ID'].unique())}") #98 total patients
-print(f"Number of patients with 9p deletions: {len(patients_9p_del_cp)}") #59 patients out of 98 are 9p21.3 deleted
-print(f"Number of patients with CDKN2A deletions: {len(patients_CDKN2A_del_cp)}") #51 patients out of 98 are CDKN2A deleted
-
-print(f"Proportion of CDKN2A-deleted patients with 9p deletions: {proportion_CDKN2A_with_9p_cp:.2f}") #All CDKN2A deleted patients are 9p21.3 deleted 
-print(f"Proportion of 9p-deleted patients with CDKN2A deletions: {proportion_9p_with_CDKN2A_cp:.2f}") #86% of 9p21.3 deleted patients are CDKN2A deleted. 
+proportion_CDKN2A_with_9p_cp = len(overlap_patients_cp) / len(patients_CDKN2A_del_cp) 
+proportion_9p_with_CDKN2A_cp = len(overlap_patients_cp) / len(patients_9p_del_cp) #86% of 9p21.3 deleted patients are CDKN2A deleted.  
 
 #Similarly, 86% of 9p21.3 deleted patients in this cohort are CDKN2A deleted. 
 #What about the remaining 14% of 9p21.3 deleted patients? 
